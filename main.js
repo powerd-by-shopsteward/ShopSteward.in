@@ -8,17 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Scroll Reveal Animations
+        // 2. Scroll Reveal Animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Remove transform after animation so it doesn't trap the card
-                setTimeout(() => {
-                    entry.target.style.transform = 'none';
-                }, 850); 
-
+                // We removed the setTimeout that was breaking the hover effect!
                 revealObserver.unobserve(entry.target); 
             }
         });
