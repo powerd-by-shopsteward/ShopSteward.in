@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSteward — The Trusted Software That Runs Your Shop</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@300..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#top" class="logo-area">
+            <!-- YOUR LOGO WITH AUTOMATIC FALLBACK AND CACHE BUSTER -->
+            <img src="images/logo.png?v=2" alt="ShopSteward Logo" class="logo-img" 
+                 onerror="alert('ERROR: logo.png not found! Please make sure the file is named exactly logo.png and is in the same folder as index.html'); this.style.display='none'; document.getElementById('fallbackLogo').style.display='block';">
+                 
+            <svg id="fallbackLogo" style="display:none; height:32px; width:auto; fill:var(--green);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                <path d="M32 8C20 8 12 17 12 28C12 35 16 41 22 44V56C22 57.5 23 58 24 58C25 58 26 57.5 26 56V48H32C33.5 48 34 47 34 46C34 45 33.5 44 32 44H26V40H32C33.5 40 34 39 34 38C34 37 33.5 36 32 36H26V44C26 46 24 46 22 46C20 46 18 44 18 42C18 36 26 32 32 32C43 32 52 23 52 12C52 10 51 8 50 8H32Z"/>
+            </svg>
+            <span class="brand-name">ShopSteward</span>
+            <span class="badge">By ShopSteward.in</span>
+        </a>
+        
+        <nav class="nav-links" id="navLinks">
+            <a href="#demo">Live Demo</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#products">Products</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="#contact" class="btn-ghost">Talk to Me</a>
+            <a href="#pricing" class="btn-primary">
+                <span class="star">✦</span> Start free trial
+            </a>
+        </div>
+        <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+    </header>
+
+    <main id="top">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-bg">
+                <!-- YOUR HERO IMAGE WITH AUTOMATIC FALLBACK AND CACHE BUSTER -->
+                <img src="images/shop-owner.png?v=2" alt="Shop Owner" 
+                     onerror="alert('ERROR: shop-owner.png not found! Please make sure the file is named exactly shop-owner.png and is in the same folder as index.html'); this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop'">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>YOUR SHOP<br>
+                        <span class="serif-text">YOUR "Steward" </span>
+                    </h1>
+                    <p class="lead">Custom-built inventory, billing and reports — running on your phone, in your language, priced for your business. Trusted like a steward, who never forgets a bill.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#pricing" class="btn-primary large">Start free trial <span>→</span></a>
+                        <a href="#how-it-works" class="btn-secondary large">Learn more</a>
+                    </div>
+                </div>
+
+                <!-- HERO GLASS CARD -->
+               <div class="hero-card glass spotlight-card reveal">
+    <h3>Create your shop plan</h3>
+    
+    <div class="card-tags">
+        <span class="tag"><span class="user-icon">👤</span> Owner</span>
+        <span class="tag"><span class="user-icon">👤</span> Staff</span>
+        <button class="add-btn">+</button>
+    </div>
+
+    <div class="card-input-area">
+        <!-- Updated Placeholder -->
+        <textarea id="aiPrompt" placeholder="Tell us your thoughts. What do you want to build for your shop?"></textarea>
+        
+        <!-- Updated Button with WhatsApp Icon -->
+        <button class="submit-circle" id="whatsappBtn" aria-label="Send via WhatsApp">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+        </button>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <!-- NICHE STRIP -->
+        <div class="niche-strip reveal">
+            <div class="niche-label">BUILT FOR SHOPS LIKE YOURS</div>
+            <div class="niche-row">
+                <span class="niche-chip">Agriculture / Agro</span>
+                <span class="niche-chip">Grocery / Kirana</span>
+                <span class="niche-chip">Hardware</span>
+                <span class="niche-chip">Wholesale & Distribution</span>
+                <span class="niche-chip">Clothing / Textile</span>
+                <span class="niche-chip">Electronics</span>
+            </div>
+        </div>
+
+        <!-- WHY STEWARD -->
+        <section class="section">
+            <div class="steward-block glass spotlight-card reveal">
+                <div class="section-no">WHY "STEWARD"</div>
+                <p class="steward-lead">
+                    A <b>steward</b> is the person a shop owner trusts to run everything when he isn't looking. He keeps the books. Tracks the stock. Remembers who owes what. Never sleeps, never forgets, never steals. <em>He doesn't own the shop — he makes sure it runs.</em><br><br>
+                    That's exactly what this software is.
+                </p>
+            </div>
+        </section>
+
+        <!-- WHY -->
+        <section class="section">
+            <div class="section-head reveal">
+                <div class="section-no">01 / WHY</div>
+                <h2>Generic software doesn't fit <em>your shop.</em></h2>
+            </div>
+            <div class="grid-3">
+                <article class="glass card spotlight-card reveal">
+                    <div class="bigno">01</div>
+                    <h3>Wrong units, wrong categories</h3>
+                    <p>Your shop has its own products, measurements and workflow. Your software should understand them — not force you into someone else's template.</p>
+                </article>
+                <article class="glass card spotlight-card reveal">
+                    <div class="bigno">02</div>
+                    <h3>Paying for what you don't use</h3>
+                    <p>Get the functions your business actually needs instead of a giant feature list designed for somebody else.</p>
+                </article>
+                <article class="glass card spotlight-card reveal">
+                    <div class="bigno">03</div>
+                    <h3>No one to talk to</h3>
+                    <p>Talk directly to the person who builds your software — not a ticket maze.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="how-it-works">
+            <div class="section-head reveal">
+                <div class="section-no">02 / PROCESS</div>
+                <h2>Three steps. <em>No jargon.</em></h2>
+            </div>
+            <div class="grid-3">
+                <div class="glass card spotlight-card reveal">
+                    <div class="num">STEP 01</div>
+                    <h3>Tell me about your shop</h3>
+                    <p>A 15-minute call. What you sell, what units you use, what language, what reports you need. I listen — you don't fill out forms.</p>
+                </div>
+                <div class="glass card spotlight-card reveal">
+                    <div class="num">STEP 02</div>
+                    <h3>I build a live demo for you</h3>
+                    <p>You get a working link within days. Test it on your own products. Ask for changes. We refine until it fits like it was made for you — because it is.</p>
+                </div>
+                <div class="glass card spotlight-card reveal">
+                    <div class="num">STEP 03</div>
+                    <h3>You run your shop</h3>
+                    <p>Daily auto-backup, printing, reports, and an AI agent that answers your questions. If something breaks, message me directly — not a ticket queue.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED ACROSS INDIA -->
+        <section class="section text-center">
+            <div class="glass trusted-block spotlight-card reveal">
+                <div class="section-no">TRUSTED ACROSS INDIA</div>
+                <div class="trusted-num">
+                    <span class="spin-target" data-target="37">37</span>
+                </div>
+                <div class="trusted-tag">shop owners run their business on ShopSteward</div>
+            </div>
+        </section>
+
+        <!-- LIVE DEMO -->
+        <section class="section" id="demo">
+            <div class="section-head reveal">
+                <div class="section-no">03 / LIVE SYSTEM</div>
+                <h2>Don't take my word for it. <em>Open it.</em></h2>
+            </div>
+            <div class="demo-wrap glass spotlight-card reveal">
+                <aside class="demo-info">
+                    <div>
+                        <div class="eyebrow">LIVE DEMO</div>
+                        <h3>Try the actual app.</h3>
+                        <p class="copy">Use the demo to see inventory, billing, purchases, reports and the shop workflow in action.</p>
+                        <span class="demo-url">powerd-by-shopsteward.github.io/AI-added-Agri-Web</span>
+                    </div>
+                    <div class="credentials">
+                        <small>DEMO LOGIN</small>
+                        <div class="cred">EMAIL: <code id="demoEmail">test@gmail.com</code></div>
+                        <div class="cred">PASSWORD: <code id="demoPassword">123456</code></div>
+                        <div class="demo-actions">
+                            <button class="mini" onclick="copyText('demoEmail', this)">COPY EMAIL</button>
+                            <button class="mini" onclick="copyText('demoPassword', this)">COPY PASSWORD</button>
+                            <a class="mini btn-primary" href="https://powerd-by-shopsteward.github.io/AI-added-Agri-Web/" target="_blank" rel="noopener">OPEN APP ↗</a>
+                        </div>
+                    </div>
+                </aside>
+                <div class="demo-screen">
+                    <iframe loading="lazy" src="https://powerd-by-shopsteward.github.io/AI-added-Agri-Web/" title="Live demo"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section" id="features">
+            <div class="section-head reveal">
+                <div class="section-no">04 / SYSTEM</div>
+                <h2>Everything in <em>one place.</em></h2>
+            </div>
+            <div class="features-grid">
+                <div class="glass card spotlight-card reveal"><h3>01. Inventory Management</h3><p>Add, edit, track stock in real time. Low-stock alerts before you run out.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>02. Sales & Billing</h3><p>Create a bill in seconds. Save it, print it, share it. Thermal or A4.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>03. Purchase Tracking</h3><p>Record every supplier purchase. Know your real cost per item and true margin.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>04. Customer Records</h3><p>Full contact history, purchase patterns, outstanding balance. Never lose track.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>05. Reports That Matter</h3><p>Daily sales, monthly summary, stock valuation, profit margins.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>06. Multi-Language</h3><p>Run the whole app in your language. Your staff shouldn't need English.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>07. Auto Backup</h3><p>Data exports automatically to Excel/JSON. Manual backup button too.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>08. Works on Any Phone</h3><p>No app store. No install. Open it in Chrome or Safari and it just works.</p></div>
+                <div class="glass card spotlight-card reveal"><h3>09. Custom Units</h3><p>Quintals, dozens, litres, bags, boxes. Your units, your categories.</p></div>
+                <div class="glass card spotlight-card reveal highlight-card"><h3>10. AI Agent <span class="tag-new">NEW</span></h3><p>Ask questions in plain language. "What sold most this week?" The AI answers from your data.</p></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="section">
+            <div class="glass testimonial-card spotlight-card reveal">
+                <div class="section-no">30+ HAPPY OWNERS</div>
+                <p class="testi-quote">Pehle stock count karke register karne mein pura din nikal jaata tha. Ab ShopSteward ke saath stock har waqt mere table pe rehta hai — kaunsa product low hai, kya order karna hai, profit mein hoon ya ghate mein — sab kuch pata chalta hai. Mujhe motivation milti hai.</p>
+                <div class="testi-author"><b>Gourgopal Das</b><span>Krishi Bandhu</span></div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="section" id="pricing">
+            <div class="section-head reveal">
+                <div class="section-no">05 / PRICING</div>
+                <h2>Simple, <em>honest pricing.</em></h2>
+            </div>
+            <p class="copy mb-40 reveal">Limited-time offer prices. Pay once for setup + first year — no hidden charges. Renew from year 2 at a reduced rate.</p>
+
+            <div class="pricing-grid">
+                <article class="glass price-card spotlight-card reveal">
+                    <div class="price-tier">TIER_01 // LIMITED OFFER</div>
+                    <h3>Essentials, done right.</h3>
+                    <div class="price-old">₹4,899</div>
+                    <div class="amt">₹<span class="spin-target" data-target="2999">2,999</span></div>
+                    <div class="sub">first year · setup included<br>then <b>₹599/year</b> from year 2</div>
+                    <div class="price-meta">
+                        <div><span>Best for</span><b>Small shops · 1 person</b></div>
+                        <div><span>Users</span><b>1 user</b></div>
+                        <div><span>Setup</span><b>Self-setup</b></div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Basic Billing</li>
+                        <li>Basic Inventory Tracking</li>
+                        <li>Shop's Name on App</li>
+                        <li>24-hour Auto Backup</li>
+                    </ul>
+                    <div class="not-label">NOT INCLUDED</div>
+                    <ul class="not-list">
+                        <li class="not">Custom Logo</li>
+                        <li class="not">GST Billing</li>
+                        <li class="not">Custom Bill Design</li>
+                    </ul>
+                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20BASE%20ShopSteward%20plan%20at%20%E2%82%B92%2C999" target="_blank">DEPLOY BASE →</a>
+                </article>
+
+                <article class="glass price-card popular spotlight-card reveal">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="price-tier">TIER_02 // CUSTOM</div>
+                    <h3>Built around your shop.</h3>
+                    <div class="price-old">₹6,899</div>
+                    <div class="amt">₹<span class="spin-target" data-target="3999">3,999</span></div>
+                    <div class="sub">first year · setup included<br>then <b>₹599/year</b> from year 2</div>
+                    <div class="price-meta">
+                        <div><span>Best for</span><b>Most shops</b></div>
+                        <div><span>Users</span><b>2 users</b></div>
+                        <div><span>Setup</span><b>Free setup + training</b></div>
+                    </div>
+                    <ul class="features-list">
+                        <li>Everything in Base</li>
+                        <li>Custom Logo & Bill Design</li>
+                        <li>GST Billing</li>
+                        <li>Customer Udhaar Tracking</li>
+                        <li>Full Inventory & Reports</li>
+                        <li>WhatsApp Support</li>
+                    </ul>
+                    <a class="btn-primary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20CUSTOM%20ShopSteward%20plan%20at%20%E2%82%B93%2C999" target="_blank">GET CUSTOM →</a>
+                </article>
+
+                <article class="glass price-card spotlight-card reveal">
+                    <div class="price-tier">TIER_03 // AI ADVANCED</div>
+                    <h3>Full Custom.</h3>
+                    <div class="price-old">₹14,999</div>
+                    <div class="amt">₹<span class="spin-target" data-target="9999">9,999</span></div>
+                    <div class="sub">first year · setup included<br>then <b>₹599/year</b> from year 2</div>
+                    <div class="price-meta">
+                        <div><span>Best for</span><b>Multi-branch shops</b></div>
+                        <div><span>Users</span><b>Unlimited</b></div>
+                        <div><span>Setup</span><b>Priority training</b></div>
+                    </div>
+                    <ul class="features-list">
+                        <li class="highlight-green">★ Premium Custom Domain Included</li>
+                        <li>Everything in Custom</li>
+                        <li>AI Agent Assistant</li>
+                        <li>Multiple Branch Sync</li>
+                        <li>Advanced Dashboards</li>
+                        <li>Priority 24/7 Support</li>
+                    </ul>
+                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20AI%20ADVANCED%20ShopSteward%20plan%20at%20%E2%82%B99%2C999" target="_blank">TALK TO ARCHITECT →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- PRODUCTS & ADD-ONS -->
+        <section class="section" id="products">
+            <div class="section-head reveal">
+                <div class="section-no">06 / PRODUCTS & ADD-ONS</div>
+                <h2>Domains & <em>extra services.</em></h2>
+            </div>
+            
+            <h3 class="sub-heading reveal">🌐 Domains</h3>
+            <div class="domain-grid">
+                <div class="glass domain-card spotlight-card reveal" onclick="openDomainModal('.in Domain', '₹1,299 setup + ₹999/year')">
+                    <h4>.in Domain</h4>
+                    <p>yourshop.in</p>
+                    <div class="domain-price">₹1,299 <span>+ ₹999/yr</span></div>
+                    <button class="btn-text">View Details →</button>
+                </div>
+                <div class="glass domain-card spotlight-card reveal" onclick="openDomainModal('.com Domain', '₹1,799 setup + ₹1,599/year')">
+                    <h4>.com Domain</h4>
+                    <p>yourshop.com</p>
+                    <div class="domain-price">₹1,799 <span>+ ₹1,599/yr</span></div>
+                    <button class="btn-text">View Details →</button>
+                </div>
+                <div class="glass domain-card spotlight-card reveal" onclick="openDomainModal('Subdomain', '₹699 setup + ₹299/year')">
+                    <h4>Subdomain</h4>
+                    <p>yourshop.shopsteward.in</p>
+                    <div class="domain-price">₹699 <span>+ ₹299/yr</span></div>
+                    <button class="btn-text">View Details →</button>
+                </div>
+                <div class="glass domain-card spotlight-card reveal" onclick="openDomainModal('Custom Domain', 'Variable Pricing (Market Rate + ₹200 fee)')">
+                    <h4>Custom TLD</h4>
+                    <p>Any extension</p>
+                    <div class="domain-price">Variable</div>
+                    <button class="btn-text">View Details →</button>
+                </div>
+            </div>
+
+            <h3 class="sub-heading mt-50 reveal">✨ Add-on Services</h3>
+            <div class="grid-2">
+                <article class="glass card spotlight-card reveal">
+                    <div class="section-no">ADD-ON 01</div>
+                    <h3>WhatsApp Business Integration</h3>
+                    <div class="amt-large">₹1,499 <small>one-time</small></div>
+                    <p class="mb-20">Send bills & udhaar reminders directly to customer WhatsApp.</p>
+                    <ul class="features-list">
+                        <li>Auto-send bill to customer's WhatsApp</li>
+                        <li>Automatic udhaar payment reminders</li>
+                        <li>Share reports with staff</li>
+                    </ul>
+                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20WhatsApp%20Business%20add-on%20(%E2%82%B91%2C499)." target="_blank">ADD TO MY PLAN →</a>
+                </article>
+                <article class="glass card spotlight-card reveal">
+                    <div class="section-no">ADD-ON 02</div>
+                    <h3>Data Migration & Setup</h3>
+                    <div class="amt-large">₹999 <small>one-time</small></div>
+                    <p class="mb-20">We import your existing inventory from Excel, Tally, or Vyapar.</p>
+                    <ul class="features-list">
+                        <li>Import existing products & stock</li>
+                        <li>Import customer list with udhaar balance</li>
+                        <li>Set up your categories and units</li>
+                    </ul>
+                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20Data%20Migration%20add-on%20(%E2%82%B9999)." target="_blank">ADD TO MY PLAN →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="section-head reveal">
+                <div class="section-no">07 / FAQ</div>
+                <h2>Questions shop owners <em>ask me.</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="glass q reveal"><button>Do I need to buy new hardware or a printer?</button><div class="answer">No. It runs in the browser on the computer or phone you already own. It prints on standard thermal and A4 printers.</div></div>
+                <div class="glass q reveal"><button>Can I use it on my mobile phone?</button><div class="answer">Yes. Open the link in Chrome or Safari. Same data, same features, responsive layout. No app store, no installation.</div></div>
+                <div class="glass q reveal"><button>What is the AI Agent and how does it help me?</button><div class="answer">It's a built-in assistant that understands plain language. Ask it "Which item sold most last month?" and it answers using your own shop data.</div></div>
+                <div class="glass q reveal"><button>What happens to my data if I stop paying?</button><div class="answer">Your data is yours. You can export everything to Excel or JSON at any time, from inside the app. I never hold your business data hostage.</div></div>
+                <div class="glass q reveal"><button>How long does it take to build?</button><div class="answer"><b>Base app: within 72 hours.</b> Every ShopSteward is built from scratch. Customizations depend on what you ask for, and I will give you a clear timeline after our first call.</div></div>
+                <div class="glass q reveal"><button>Why should I choose this over Vyapar or Tally?</button><div class="answer">Those are good products for average needs. If your units, categories, language or workflow don't fit their template, I build around you instead.</div></div>
+                <div class="glass q reveal"><button>Who do I contact if something breaks?</button><div class="answer">Me. Directly. WhatsApp or call. Not a ticket system, not a chatbot. You talk to the person who built your software.</div></div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="section-no">08 / CONTACT</div>
+                    <h2>Let's build <br><span class="serif-text">your steward.</span></h2>
+                    <p class="copy mt-20">Tell me what your shop needs. I'll reply within a day — usually much faster.</p>
+                </div>
+                <div class="glass contact-card spotlight-card reveal">
+                    <a href="https://wa.me/918637560557" target="_blank" class="contact-item"><b>WhatsApp</b><span>+91 86375 60557 ↗</span></a>
+                    <a href="mailto:shopsteward.in@gmail.com" class="contact-item"><b>Email</b><span>shopsteward.in@gmail.com</span></a>
+                    <a href="https://instagram.com/shopsteward.in" target="_blank" class="contact-item"><b>Instagram</b><span>@shopsteward.in ↗</span></a>
+                    <div class="wa-cta">
+                        <a class="btn-primary full-width large" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20a%20custom%20shop%20manager." target="_blank">Chat on WhatsApp →</a>
+                        <a class="btn-secondary full-width large" href="mailto:shopsteward.in@gmail.com">Send an Email →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>© 2026 ShopSteward</div>
+        <div class="footer-links">
+            <a href="#terms" onclick="openModal('terms')">Terms</a>
+            <a href="#privacy" onclick="openModal('privacy')">Privacy</a>
+            <a href="#refund" onclick="openModal('refund')">Refund</a>
+            <a href="https://instagram.com/shopsteward.in" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- DOMAIN MODAL -->
+    <div class="modal-overlay" id="domainModal">
+        <div class="glass modal-content">
+            <button class="close-btn" onclick="closeModal('domainModal')">×</button>
+            <h2 id="modalDomainTitle">Domain Details</h2>
+            <p class="modal-desc">You are about to request setup for <strong id="modalDomainName"></strong>.</p>
+            <div class="modal-price" id="modalDomainPrice"></div>
+            <p class="modal-note">By clicking confirm, you will be redirected to WhatsApp to finalize the order with our team.</p>
+            <div class="modal-actions">
+                <a href="#" id="modalWhatsappBtn" class="btn-primary full-width" target="_blank">Confirm on WhatsApp →</a>
+                <a href="mailto:shopsteward.in@gmail.com?subject=Domain%20Inquiry" class="btn-secondary full-width mt-10">Confirm via Email →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEGAL MODALS -->
+    <div class="modal-overlay" id="termsModal">
+        <div class="glass modal-content legal-content">
+            <button class="close-btn" onclick="closeModal('termsModal')">×</button>
+            <h2>Terms & Conditions</h2>
+            <p>ShopSteward provides custom software development and related services for shops and businesses. Information on this website explains the services, demo and pricing. Specific client work is governed by the agreed scope.</p>
+            <p>Demo credentials are provided for evaluation. Do not enter real business data into the demo. Custom work and ownership terms are defined in the client agreement.</p>
+            <p>Services are provided according to the agreed scope and reasonable effort. Liability is limited to the extent permitted by applicable law. Applicable Indian law governs these terms.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="privacyModal">
+        <div class="glass modal-content legal-content">
+            <button class="close-btn" onclick="closeModal('privacyModal')">×</button>
+            <h2>Privacy Policy</h2>
+            <p>We collect information you submit through contact forms, such as your name, shop name, phone number, business type and message. We use it to respond to enquiries and provide requested services.</p>
+            <p>We take reasonable measures to protect submitted information. Links and services such as WhatsApp, email and hosting may process information under their own policies.</p>
+            <p>The service is intended for businesses and is not directed at children. You can contact us to ask about or correct information you have submitted.</p>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="refundModal">
+        <div class="glass modal-content legal-content">
+            <button class="close-btn" onclick="closeModal('refundModal')">×</button>
+            <h2>Refund Policy</h2>
+            <p>Development begins after the agreed scope and payment terms are confirmed. Annual service terms and renewal pricing are shown on the pricing section. Additional work outside the agreed scope is quoted separately.</p>
+            <p>Issues with agreed deliverables should be reported so they can be reviewed. Reasonable bug fixes for agreed functionality are handled as part of support terms.</p>
+            <p>For any concern about a payment or service provided, contact us within 7 days at shopsteward.in@gmail.com.</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
