@@ -1,6 +1,6 @@
 /* --- 1. Variables --- */
 :root {
-    --bg-dark: #0a0a0a;
+    --bg-dark: #121c17; /* Updated lighter muddy green backdrop */
     --text-light: #f3f4f6;
     --text-muted: #9ca3af;
     
@@ -10,8 +10,8 @@
     --green-btn-hover: #4A6655;
     
     /* Intense Glass Effect */
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(0, 0, 0, 0.2);
+    --glass-border: rgba(123, 178, 142, 0.25);
     
     --font-sans: 'Manrope', sans-serif;
     --font-serif: 'Fraunces', serif;
@@ -21,25 +21,16 @@
 html { scroll-behavior: smooth; }
 
 body { 
-    /* A noticeably lighter, rich dark green base */
-    background-color: #121c17; 
-    
-    /* Lifted and vibrant green glows */
+    background-color: var(--bg-dark); 
     background-image: 
-        /* 1. Top-left: Brighter muddy green */
         radial-gradient(ellipse at 10% 10%, rgba(123, 178, 142, 0.28) 0%, transparent 50%),
-        /* 2. Bottom-right: A vibrant emerald/teal */
         radial-gradient(ellipse at 90% 90%, rgba(60, 145, 110, 0.22) 0%, transparent 50%),
-        /* 3. Center: A soft mid-green ambient wash */
         radial-gradient(ellipse at 50% 50%, rgba(80, 140, 100, 0.12) 0%, transparent 60%);
-    
-    background-attachment: fixed; 
-    
+    background-attachment: fixed;
     color: var(--text-light); 
     font-family: var(--font-sans); 
     overflow-x: hidden; 
     line-height: 1.6; 
-    margin: 0;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -56,24 +47,34 @@ ul { list-style: none; }
 
 /* --- 2. THE GLASSMORPHISM --- */
 .glass {
-    /* Darker transparency so text pops against the lighter green background */
-    background: rgba(0, 0, 0, 0.2); 
-    
+    background: var(--glass-bg);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    
-    border: 1px solid rgba(123, 178, 142, 0.25); 
-    
+    border: 1px solid var(--glass-border);
     box-shadow: 
         0 8px 32px 0 rgba(0, 0, 0, 0.5), 
-        inset 0 0 15px rgba(123, 178, 142, 0.05), 
-        0 0 15px rgba(123, 178, 142, 0.1);
-        
+        inset 0 0 15px rgba(123, 178, 142, 0.05);
     border-radius: 24px;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, filter 0.4s ease, opacity 0.4s ease;
 }
 
-/* --- 3. SCROLL REVEAL ANIMATIONS --- */
+/* --- 3. THE NEW HOVER EFFECT (LIFT & GLOW) --- */
+.spotlight-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, background-color 0.4s ease;
+    will-change: transform, box-shadow;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(123, 178, 142, 0.8);
+    background: rgba(18, 24, 20, 0.85);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.7), 
+        0 0 30px rgba(123, 178, 142, 0.2), 
+        inset 0 0 20px rgba(123, 178, 142, 0.1);
+    z-index: 10;
+}
+
+/* --- 4. SCROLL REVEAL ANIMATIONS --- */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -84,8 +85,8 @@ ul { list-style: none; }
     transform: translateY(0);
 }
 
-/* --- 4. Navbar --- */
-.navbar { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; z-index: 100; background: linear-gradient(to bottom, rgba(10,10,10,0.9), transparent); }
+/* --- 5. Navbar --- */
+.navbar { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; z-index: 100; background: linear-gradient(to bottom, rgba(18,28,23,0.9), transparent); }
 .logo-area { display: flex; align-items: center; gap: 12px; }
 .logo-img { height: 32px; width: auto; object-fit: contain; }
 .brand-name { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.02em; }
@@ -94,29 +95,21 @@ ul { list-style: none; }
 .nav-links a:hover { color: white; }
 .nav-actions { display: flex; gap: 15px; align-items: center; }
 
-/* --- 5. Buttons --- */
+/* --- 6. Buttons --- */
 .btn-ghost { font-size: 0.9rem; color: var(--text-light); padding: 10px 20px; border-radius: 50px; transition: 0.3s; }
 .btn-ghost:hover { color: var(--green); }
 .btn-primary { background-color: var(--green-btn); color: white; padding: 10px 20px; border-radius: 50px; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s; border: 1px solid var(--green-btn-hover); cursor: pointer; }
-.btn-primary:hover { background-color: var(--green-btn-hover); transform: translateY(-2px); }
+.btn-primary:hover { background-color: var(--green-btn-hover); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 .btn-secondary { background: rgba(255,255,255,0.05); color: white; padding: 10px 20px; border-radius: 50px; font-size: 0.9rem; transition: 0.3s; border: 1px solid var(--glass-border); display: inline-flex; align-items: center; cursor: pointer;}
 .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 .btn-primary.large, .btn-secondary.large { padding: 14px 28px; font-size: 1rem; }
 .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-/* --- 6. Hero --- */
+/* --- 7. Hero --- */
 .hero { position: relative; height: 100vh; display: flex; align-items: center; padding: 0 40px; overflow: hidden; }
 .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
-.hero-overlay { 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    /* Fades into the new #121c17 background */
-    background: linear-gradient(90deg, #121c17 0%, rgba(18, 28, 23, 0.95) 30%, rgba(18, 28, 23, 0.4) 70%, transparent 100%); 
-}
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, #121c17 0%, rgba(18, 28, 23, 0.95) 30%, rgba(18, 28, 23, 0.4) 70%, transparent 100%); }
 .hero-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto; gap: 50px; }
 .hero-text { max-width: 600px; }
 .hero-text h1 { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; font-weight: 500; margin-bottom: 24px; letter-spacing: -0.03em; }
@@ -132,60 +125,18 @@ ul { list-style: none; }
 .add-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
 .add-btn:hover { background: rgba(255,255,255,0.1); }
 .card-input-area { position: relative; }
-.card-input-area textarea { 
-    width: 100%; 
-    height: 140px; 
-    background: rgba(0,0,0,0.2); 
-    border: 1px solid rgba(255,255,255,0.1); 
-    border-radius: 16px; 
-    padding: 18px 70px 18px 18px; /* Extra right padding so text doesn't hide behind the button */
-    color: white; 
-    font-family: var(--font-sans); 
-    font-size: 0.95rem; 
-    resize: none; 
-    outline: none; 
-    transition: border-color 0.3s; 
-}
+.card-input-area textarea { width: 100%; height: 140px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 18px 70px 18px 18px; color: white; font-family: var(--font-sans); font-size: 0.95rem; resize: none; outline: none; transition: border-color 0.3s; }
 .card-input-area textarea:focus { border-color: var(--green); }
+.submit-circle { position: absolute; bottom: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.15); border: none; color: white; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; padding: 0; }
+.submit-circle svg { width: 20px; height: 20px; fill: currentColor; transition: transform 0.3s ease; }
+.submit-circle:hover { background: #25D366; color: white; transform: scale(1.05); }
+.submit-circle:hover svg { transform: scale(1.1) rotate(10deg); }
 
-/* Updated Button for WhatsApp */
-.submit-circle { 
-    position: absolute; 
-    bottom: 16px; 
-    right: 16px; 
-    width: 44px; 
-    height: 44px; 
-    border-radius: 50%; 
-    background: rgba(255,255,255,0.15); 
-    border: none; 
-    color: white; 
-    cursor: pointer; 
-    transition: 0.3s; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 0;
-}
-.submit-circle svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: transform 0.3s ease;
-}
-.submit-circle:hover { 
-    background: #25D366; /* WhatsApp Brand Color on hover */
-    color: white;
-    transform: scale(1.05);
-}
-.submit-circle:hover svg {
-    transform: scale(1.1) rotate(10deg);
-}
-
-/* --- 7. Sections --- */
+/* --- 8. Sections --- */
 .niche-strip { padding: 40px 40px; max-width: 1400px; margin: 0 auto; text-align: center; }
 .niche-label { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 20px; }
 .niche-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.niche-chip { padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 0.8rem; color: #d1d5db; background: rgba(255,255,255,0.02); }
+.niche-chip { padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 0.8rem; color: #d1d5db; background: rgba(0,0,0,0.2); }
 
 .section { padding: 100px 40px; max-width: 1400px; margin: 0 auto; }
 .section-head { margin-bottom: 50px; }
@@ -227,7 +178,7 @@ ul { list-style: none; }
 .cred { font-size: 0.9rem; margin-bottom: 10px; color: #d1d5db; }
 .cred code { color: var(--green); background: rgba(123,178,142,0.1); padding: 4px 8px; border-radius: 4px; font-family: monospace; }
 .demo-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-.mini { font-size: 0.75rem; padding: 10px; border: 1px solid var(--glass-border); background: transparent; color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; text-align: center; }
+.mini { font-size: 0.75rem; padding: 10px; border: 1px solid var(--glass-border); background: rgba(0,0,0,0.3); color: white; border-radius: 6px; cursor: pointer; transition: 0.3s; text-align: center; }
 .mini:hover { background: rgba(255,255,255,0.1); }
 .demo-screen { background: #111; }
 .demo-screen iframe { width: 100%; height: 100%; min-height: 600px; border: none; }
@@ -236,7 +187,7 @@ ul { list-style: none; }
 .features-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
 .features-grid h3 { font-size: 1rem; }
 .features-grid p { font-size: 0.85rem; }
-.highlight-card { border-color: var(--green); background: rgba(123, 178, 142, 0.05); }
+.highlight-card { border-color: var(--green); background: rgba(123, 178, 142, 0.08); }
 .tag-new { font-size: 0.6rem; background: var(--green); color: black; padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-weight: 800; }
 
 /* Testimonial */
@@ -248,7 +199,7 @@ ul { list-style: none; }
 /* Pricing */
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
 .price-card { padding: 40px 30px; display: flex; flex-direction: column; position: relative; }
-.price-card.popular { border-color: var(--green); background: rgba(123, 178, 142, 0.08); transform: scale(1.02); z-index: 2; }
+.price-card.popular { border-color: var(--green); background: rgba(123, 178, 142, 0.1); transform: scale(1.02); z-index: 2; }
 .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: black; font-size: 0.7rem; font-weight: 800; padding: 6px 16px; border-radius: 20px; letter-spacing: 0.1em; white-space: nowrap; }
 .price-tier { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.1em; }
 .price-card h3 { font-size: 1.4rem; margin-bottom: 20px; font-weight: 500; }
@@ -256,7 +207,7 @@ ul { list-style: none; }
 .price-card .amt { font-size: 3rem; font-weight: 700; line-height: 1; margin-bottom: 10px; letter-spacing: -0.03em; }
 .price-card .sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 25px; }
 .price-card .sub b { color: var(--green); }
-.price-meta { background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 0.85rem; }
+.price-meta { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 0.85rem; }
 .price-meta div { display: flex; justify-content: space-between; margin-bottom: 8px; }
 .price-meta div:last-child { margin-bottom: 0; }
 .price-meta span { color: var(--text-muted); }
@@ -319,47 +270,7 @@ ul { list-style: none; }
 .modal-note { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 25px; font-style: italic; }
 .modal-actions { display: flex; flex-direction: column; }
 
-/* --- 8. THE FIXED SPOTLIGHT / BLUR EFFECT --- */
-/* This uses modern CSS to blur everything EXCEPT the specific hovered card */
-
-/* Elements that should blur */
-.navbar, .footer, .hero-text, .section-head, .niche-strip, .hero-bg, .spotlight-card, .copy, .section-no {
-    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* When ANY spotlight card is hovered, blur the background, navbar, text, and other cards */
-body:has(.spotlight-card:hover) .navbar,
-body:has(.spotlight-card:hover) .footer,
-body:has(.spotlight-card:hover) .hero-text,
-body:has(.spotlight-card:hover) .section-head,
-body:has(.spotlight-card:hover) .niche-strip,
-body:has(.spotlight-card:hover) .hero-bg,
-body:has(.spotlight-card:hover) .copy,
-body:has(.spotlight-card:hover) .section-no,
-body:has(.spotlight-card:hover) .spotlight-card:not(:hover) {
-    filter: blur(8px) brightness(0.3);
-    opacity: 0.8;
-    pointer-events: none; /* Prevents hovering other cards while one is active */
-}
-
-/* Make the specifically hovered card pop up, stay sharp, and glow */
-body:has(.spotlight-card:hover) .spotlight-card:hover {
-    transform: scale(1.03) translateY(-5px);
-    
-    /* Stronger border */
-    border-color: rgba(123, 178, 142, 0.8) !important;
-    
-    /* Intense glow on hover */
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.9), 
-        inset 0 0 20px rgba(123, 178, 142, 0.2), 
-        0 0 40px rgba(123, 178, 142, 0.4) !important; 
-        
-    background: rgba(18, 24, 20, 0.95) !important; /* Slightly green-tinted solid background */
-    z-index: 100 !important;
-}
-
-/* --- 9. Responsive --- */
+/* --- 9. COMPACT MOBILE OPTIMIZATION --- */
 @media (max-width: 1100px) {
     .features-grid { grid-template-columns: repeat(3, 1fr); }
     .domain-grid { grid-template-columns: repeat(2, 1fr); }
@@ -368,152 +279,86 @@ body:has(.spotlight-card:hover) .spotlight-card:hover {
 }
 
 @media (max-width: 900px) {
-    .navbar { 
-        padding: 15px 20px; 
-        background: rgba(18, 28, 23, 0.95); /* Matches new backdrop */
-        backdrop-filter: blur(10px);
-    }
+    .navbar { padding: 12px 20px; background: rgba(18,28,23,0.95); backdrop-filter: blur(10px); }
+    .nav-actions { display: none; } /* Hide redundant buttons */
+    .menu-btn { display: block; margin-left: auto; }
+    .nav-links { display: none; position: absolute; top: 60px; left: 0; width: 100%; background: #121c17; flex-direction: column; padding: 15px; border-bottom: 1px solid var(--glass-border); }
+    .nav-links.show { display: flex; }
     
-    /* 1. Hide the bulky buttons in the header on mobile */
-    .nav-actions { 
-        display: none; 
-    }
+    .hero { flex-direction: column; height: auto; padding: 100px 20px 40px; }
+    .hero-content { flex-direction: column; text-align: center; gap: 30px; }
+    .hero-text h1 { font-size: 2.8rem; }
+    .hero-text .lead { font-size: 1rem; margin-bottom: 25px; }
+    .hero-actions { justify-content: center; flex-direction: column; width: 100%; gap: 10px; }
+    .hero-actions a { width: 100%; justify-content: center; }
+    .hero-overlay { background: linear-gradient(0deg, #121c17 0%, rgba(18,28,23,0.85) 100%); }
+    .hero-card { width: 100%; max-width: 500px; margin: 0 auto; padding: 24px; }
     
-    /* 2. Ensure the hamburger menu sits on the right */
-    .menu-btn { 
-        display: block; 
-        margin-left: auto;
-    }
+    .grid-3 { grid-template-columns: 1fr; gap: 15px; }
+    .grid-2 { grid-template-columns: 1fr; gap: 15px; }
     
-    .nav-links { 
-        display: none; 
-        position: absolute; 
-        top: 70px; 
-        left: 0; 
-        width: 100%; 
-        background: #121c17; 
-        flex-direction: column; 
-        padding: 20px; 
-        border-bottom: 1px solid var(--glass-border); 
-    }
-    .nav-links.show { 
-        display: flex; 
-    }
-
-    /* Hero Adjustments for Tablet/Mobile */
-    .hero { 
-        flex-direction: column; 
-        height: auto; 
-        padding: 120px 20px 60px; 
-    }
+    .demo-wrap { grid-template-columns: 1fr; min-height: auto; }
+    .demo-info { border-right: none; border-bottom: 1px solid var(--glass-border); padding: 25px; }
+    .demo-screen iframe { min-height: 350px; }
     
-    .hero-content { 
-        flex-direction: column; 
-        text-align: center; 
-        gap: 40px; 
-    }
-    
-    .hero-text h1 { 
-        font-size: 3rem; 
-    }
-    
-    /* Stack the hero buttons neatly */
-    .hero-actions { 
-        justify-content: center; 
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .hero-actions a {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .hero-overlay { 
-        background: linear-gradient(0deg, #121c17 0%, rgba(18, 28, 23, 0.85) 100%); 
-    }
-    
-    .hero-card { 
-        width: 100%; 
-        max-width: 500px; 
-        margin: 0 auto;
-    }
-    
-    /* Grids */
-    .grid-3 { grid-template-columns: 1fr; }
-    .grid-2 { grid-template-columns: 1fr; }
-    .demo-wrap { grid-template-columns: 1fr; }
-    .demo-info { border-right: none; border-bottom: 1px solid var(--glass-border); }
-    .demo-screen iframe { min-height: 400px; }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .contact-grid { grid-template-columns: 1fr; }
-    .footer { flex-direction: column; gap: 20px; align-items: center; text-align: center; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer { flex-direction: column; gap: 15px; align-items: center; text-align: center; padding: 30px 20px; }
 }
 
 @media (max-width: 600px) {
-    /* 1. Hide the badge so the logo and name don't squish */
-    .badge { 
-        display: none; 
-    }
+    /* 1. Hide badge to fix header squishing */
+    .badge { display: none; }
+    .brand-name { font-size: 1.1rem; }
+    .logo-img { height: 26px; }
     
-    .brand-name { 
-        font-size: 1.1rem; 
-    }
+    /* 2. Drastically reduce spacing */
+    .section { padding: 45px 16px; }
+    .section-head { margin-bottom: 25px; }
+    .section h2 { font-size: 1.8rem; }
+    .copy { font-size: 0.9rem; }
     
-    .logo-img { 
-        height: 28px; 
-    }
-
-    /* Hero Text */
-    .hero-text h1 { 
-        font-size: 2.2rem; 
-    }
+    .hero-text h1 { font-size: 2.1rem; margin-bottom: 15px; }
+    .hero-card h3 { font-size: 1.1rem; margin-bottom: 15px; }
     
-    .hero-text .lead { 
-        font-size: 1rem; 
-    }
+    /* 3. Compact Glass Card */
+    .hero-card { padding: 18px; }
+    .card-tags { gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { padding: 6px 10px; font-size: 0.7rem; }
+    .card-input-area textarea { height: 100px; font-size: 0.85rem; padding: 12px 55px 12px 12px; }
+    .submit-circle { width: 36px; height: 36px; bottom: 12px; right: 12px; }
+    .submit-circle svg { width: 16px; height: 16px; }
     
-    .section { 
-        padding: 60px 20px; 
-    }
+    /* 4. Tighter Cards */
+    .card { padding: 20px; border-radius: 16px; }
+    .card h3 { font-size: 1.1rem; }
+    .card p { font-size: 0.85rem; }
+    .bigno { font-size: 2.2rem; margin-bottom: 10px; }
     
-    .section h2 { 
-        font-size: 2rem; 
-    }
+    .steward-block { padding: 20px; border-radius: 16px; }
+    .steward-lead { font-size: 1rem; }
     
-    .steward-block, .testimonial-card, .contact-card { 
-        padding: 30px 20px; 
-    }
+    .trusted-block { padding: 40px 15px; border-radius: 16px; }
+    .trusted-num { font-size: 4rem; }
+    .trusted-tag { font-size: 1rem; }
     
-    .features-grid { 
-        grid-template-columns: 1fr; 
-    }
+    .features-grid { grid-template-columns: 1fr; gap: 10px; }
+    .domain-grid { grid-template-columns: 1fr; gap: 10px; }
     
-    .domain-grid { 
-        grid-template-columns: 1fr; 
-    }
+    /* 5. Compact Pricing */
+    .price-card { padding: 25px 20px; border-radius: 16px; }
+    .price-card .amt { font-size: 2.5rem; }
+    .price-meta { padding: 10px; font-size: 0.75rem; }
+    .features-list li { padding: 6px 0; font-size: 0.85rem; }
     
-    /* 2. Make the glass card fit perfectly */
-    .hero-card {
-        padding: 24px 20px;
-    }
+    /* 6. Compact FAQ */
+    .q button { padding: 16px; font-size: 0.95rem; }
+    .answer { padding: 0 16px 16px 16px; font-size: 0.85rem; }
     
-    .hero-card h3 {
-        font-size: 1.1rem;
-    }
-
-    /* 3. Make the tags wrap if the screen is too small */
-    .card-tags {
-        flex-wrap: wrap;
-    }
+    .contact-card { padding: 20px; border-radius: 16px; }
+    .contact-item { padding: 15px 0; font-size: 0.9rem; }
     
-    .card-input-area textarea {
-        height: 120px;
-        font-size: 0.9rem;
-        padding: 15px 60px 15px 15px;
-    }
-
-    .wa-cta { 
-        flex-direction: column; 
-    }
+    .wa-cta { gap: 10px; margin-top: 20px; }
+    .testimonial-card { padding: 25px 15px; border-radius: 16px; }
+    .testi-quote { font-size: 1.1rem; margin: 10px 0; }
 }
