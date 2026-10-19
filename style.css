@@ -371,3 +371,28 @@ ul { list-style: none; }
     .testimonial-card { padding: 25px 15px; border-radius: 16px; }
     .testi-quote { font-size: 1.1rem; margin: 10px 0; }
 }
+/* --- DESKTOP HERO STACKED LAYOUT --- */
+@media (min-width: 901px) {
+    .hero {
+        height: auto; /* Allows the section to grow */
+        min-height: 100vh;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    
+    .hero-content {
+        flex-direction: column; /* Stacks the text and card vertically */
+        align-items: flex-start; /* Aligns everything to the left */
+        justify-content: center;
+        gap: 40px; /* Space between buttons and the card */
+    }
+    
+    .hero-text {
+        max-width: 700px;
+    }
+
+    .hero-card {
+        width: 480px; /* Keeps the card a nice size */
+        margin-top: 10px;
+    }
+}
