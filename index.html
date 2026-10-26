@@ -322,18 +322,18 @@
         </section>
 
 
-        <!-- ================= COMPARISON TABLE ================= -->
+       <!-- ================= COMPARISON TABLE ================= -->
 <section class="section reveal" id="why-not-carry-on">
   <div class="comparison-header">
     <h2 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);color:#eef4ee;margin:0 0 16px;letter-spacing:-.04em;">Why not just carry on?</h2>
     <p class="copy" style="max-width:600px;margin:0 auto;text-align:center;font-size:16px;color:#a8b1ad;">Your accounting software was never built to read a bill. A register was never built to tell you your margin.</p>
   </div>
 
-  <div class="table-scroll-wrapper">
+  <div class="table-responsive-wrapper">
     <table class="compare-table">
       <thead>
         <tr>
-          <th style="text-align:left;">Feature</th>
+          <th class="col-feature">Feature</th>
           <th class="col-highlight">ShopSteward</th>
           <th>Generic Software</th>
           <th>Register / Excel</th>
@@ -341,52 +341,61 @@
       </thead>
       <tbody>
         <tr>
-          <td>Reads a supplier bill for you</td>
+          <td class="col-feature">Reads a supplier bill for you</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>Keeps stock with custom units</td>
+          <td class="col-feature">Keeps stock with custom units</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="manual">By hand</span></td>
         </tr>
         <tr>
-          <td>Runs in your local language</td>
+          <td class="col-feature">Runs in your local language</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="manual">Varies</span></td>
           <td><span class="manual">By hand</span></td>
         </tr>
         <tr>
-          <td>Ask your own data a question (AI)</td>
+          <td class="col-feature">Ask your own data a question (AI)</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="cross">✕</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>Udhaar / Credit tracking</td>
+          <td class="col-feature">Udhaar / Credit tracking</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="check">✓</span></td>
           <td><span class="manual">By hand</span></td>
         </tr>
         <tr>
-          <td>Works on any phone (No app store)</td>
+          <td class="col-feature">Works on any phone (No app store)</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="manual">Requires app</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td>Direct support from the founder</td>
+          <td class="col-feature">Direct support from the founder</td>
           <td class="col-highlight"><span class="check">✓</span></td>
           <td><span class="manual">Ticket system</span></td>
           <td><span class="cross">✕</span></td>
         </tr>
         <tr>
-          <td style="font-weight:700; color:#eef4ee;">What it costs</td>
-          <td class="col-highlight" style="font-weight:700; color:#c8ff3d;">₹2,999 setup<br><span style="font-size:11px; font-weight:400; color:#8e9995;">+ ₹599/year</span></td>
-          <td style="color:#8f9a95;">₹5,000+ / year<br><span style="font-size:11px;">+ AMC</span></td>
-          <td style="color:#8f9a95;">A salary<br><span style="font-size:11px;">& lost time</span></td>
+          <td class="col-feature" style="font-weight:700;">What it costs</td>
+          <td class="col-highlight" style="font-weight:700; color:#c8ff3d; line-height:1.4;">
+            ₹2,999 setup<br>
+            <span style="font-size:11px; font-weight:500; color:#8e9995;">+ ₹599/year</span>
+          </td>
+          <td style="line-height:1.4;">
+            ₹5,000+ / year<br>
+            <span style="font-size:11px;">+ AMC</span>
+          </td>
+          <td style="line-height:1.4;">
+            A salary<br>
+            <span style="font-size:11px;">& lost time</span>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -507,11 +516,17 @@
       </ul>
     </div>
 
-    <!-- Right: Pricing & CTA -->
+       <!-- Right: Pricing & CTA -->
     <div class="scanner-pricing">
       <div class="section-no" style="margin-bottom:10px;">AI INVOICE SCANNER</div>
       <h3 style="font-size:24px;margin:0 0 10px;color:#eef4ee;">Annual Plan</h3>
-      <div class="amt" style="font-size:42px;font-weight:950;letter-spacing:-.07em;margin:10px 0;">₹7,999<span style="font-size:16px;color:#8e9995;font-weight:600;">/year</span></div>
+      
+      <!-- FIXED AMOUNT TEXT -->
+      <div class="amt" style="font-size:42px;font-weight:950;letter-spacing:-.07em;margin:10px 0;display:flex;align-items:baseline;gap:4px;">
+        <span>₹7,999</span>
+        <span style="font-size:16px;color:#8e9995;font-weight:600;letter-spacing:normal;">/year</span>
+      </div>
+      
       <p class="sub" style="color:#8f9a95;font-size:12px;margin-bottom:20px;">+ applicable GST</p>
       
       <ul style="list-style:none;padding:0;margin:0 0 24px 0;">
@@ -521,7 +536,6 @@
 
       <a class="btn primary" style="width:100%;justify-content:center;padding:16px;" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20AI%20Invoice%20Scanner%20(%E2%82%B97%2C999%2Fyear)." target="_blank" rel="noopener">GET A QUOTE →</a>
     </div>
-  </div>
 
   <!-- Eligibility Note (Highly Visible) -->
   <div class="eligibility-note">
