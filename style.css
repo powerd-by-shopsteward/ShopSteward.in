@@ -224,7 +224,20 @@ ul { list-style: none; }
 .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: black; font-size: 0.7rem; font-weight: 800; padding: 6px 16px; border-radius: 20px; letter-spacing: 0.1em; white-space: nowrap; }
 .price-tier { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.1em; }
 .price-card h3 { font-size: 1.4rem; margin-bottom: 20px; font-weight: 500; }
-.price-old { font-size: 0.9rem; color: #ef4444; text-decoration: line-through; opacity: 0.8; margin-bottom: 5px; }
+.price-old {
+    display: inline-block;
+    background: rgba(255, 77, 77, 0.15); /* Soft red background */
+    color: #ff8d5c; /* Orange-red text */
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: line-through;
+    text-decoration-color: #ff4d4d;
+    text-decoration-thickness: 2px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 77, 77, 0.3);
+}
 .price-card .amt { font-size: 3rem; font-weight: 700; line-height: 1; margin-bottom: 10px; letter-spacing: -0.03em; }
 .price-card .sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 25px; }
 .price-card .sub b { color: var(--green); }
