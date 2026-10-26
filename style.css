@@ -368,14 +368,6 @@ ul { list-style: none; }
     .card h3 { font-size: 1.1rem; }
     .card p { font-size: 0.85rem; }
     .bigno { font-size: 2.2rem; margin-bottom: 10px; }
-
-    /* Fix the stretching pill in the Why Steward block */
-.steward-block .section-no {
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-    align-self: flex-start;
-}
     
     .steward-block { padding: 20px; border-radius: 16px; }
     .steward-lead { font-size: 1rem; }
@@ -758,4 +750,39 @@ ul { list-style: none; }
 .pricing-note strong {
   color: #eef4ee; /* Brightens the word "Note:" */
   font-weight: 600;
+}
+/* ================= ULTIMATE FIX FOR THE PILL ================= */
+.steward-block {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* ================= ULTIMATE FIX FOR THE PILL ================= */
+.steward-block {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* ================= ULTIMATE FIX FOR THE PILL ================= */
+.steward-block {
+    display: flex !important;
+    flex-direction: column !important;
+}
+/* ================= ULTIMATE FIX FOR THE PILL ================= */
+.steward-block {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* ================= ULTIMATE FIX FOR THE PILL ================= */
+.steward-block {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.steward-block .section-no {
+    display: inline-flex !important;
+    width: max-content !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important; /* Gives space between pill and text */
 }
