@@ -368,6 +368,14 @@ ul { list-style: none; }
     .card h3 { font-size: 1.1rem; }
     .card p { font-size: 0.85rem; }
     .bigno { font-size: 2.2rem; margin-bottom: 10px; }
+
+    /* Fix the stretching pill in the Why Steward block */
+.steward-block .section-no {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    align-self: flex-start;
+}
     
     .steward-block { padding: 20px; border-radius: 16px; }
     .steward-lead { font-size: 1rem; }
