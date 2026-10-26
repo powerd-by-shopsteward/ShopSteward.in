@@ -647,34 +647,46 @@ ul { list-style: none; }
     width: 45%;
   }
 }
-/* ══════════════════════════════════════════════════════════════
-   PRICING CARD HOVER (Dark Theme)
-   ══════════════════════════════════════════════════════════════ */
-.pricing-card {
-  /* Use your app's exact transition speeds */
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), 
-              box-shadow 0.25s ease, 
-              border-color 0.25s ease;
-  cursor: default;
+/* ================= PREMIUM HOVER EFFECTS ================= */
+
+/* 1. AI Invoice Scanner Pricing Card */
+.scanner-pricing {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.pricing-card:hover {
-  /* Lift effect */
-  transform: translateY(-4px);
-  /* Dark shadow with a subtle lime glow */
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 
-              0 0 20px rgba(164, 214, 94, 0.15);
-  /* Match the lime accent color from the image */
-  border-color: #a4d65e; 
+@media (hover: hover) {
+  .scanner-pricing:hover {
+    transform: translateY(-6px);
+    border-color: var(--acid);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 25px rgba(200, 255, 61, 0.15), inset 0 0 0 1px rgba(200, 255, 61, 0.3);
+    background: rgba(200, 255, 61, 0.06);
+  }
 }
 
-/* Make the "GET A QUOTE" link arrow slide slightly */
-.pricing-card .quote-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: gap 0.2s ease;
+/* 2. Comparison Table Card */
+.compare-table {
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-.pricing-card:hover .quote-link {
-  gap: 12px;
+
+@media (hover: hover) {
+  .compare-table:hover {
+    border-color: rgba(200, 255, 61, 0.35);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(200, 255, 61, 0.05);
+    transform: translateY(-2px);
+  }
+}
+
+/* 3. BONUS: Row Highlight in Comparison Table */
+/* When hovering a row, highlight it to make it easy to read across */
+@media (hover: hover) {
+  .compare-table tbody tr {
+    transition: background 0.2s ease;
+  }
+  .compare-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+  /* Keep the ShopSteward column highlight visible even when row is hovered */
+  .compare-table tbody tr:hover .col-highlight {
+    background: rgba(200, 255, 61, 0.08) !important;
+  }
 }
