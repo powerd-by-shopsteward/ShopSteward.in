@@ -647,3 +647,34 @@ ul { list-style: none; }
     width: 45%;
   }
 }
+/* ══════════════════════════════════════════════════════════════
+   PRICING CARD HOVER (Dark Theme)
+   ══════════════════════════════════════════════════════════════ */
+.pricing-card {
+  /* Use your app's exact transition speeds */
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), 
+              box-shadow 0.25s ease, 
+              border-color 0.25s ease;
+  cursor: default;
+}
+
+.pricing-card:hover {
+  /* Lift effect */
+  transform: translateY(-4px);
+  /* Dark shadow with a subtle lime glow */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 
+              0 0 20px rgba(164, 214, 94, 0.15);
+  /* Match the lime accent color from the image */
+  border-color: #a4d65e; 
+}
+
+/* Make the "GET A QUOTE" link arrow slide slightly */
+.pricing-card .quote-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s ease;
+}
+.pricing-card:hover .quote-link {
+  gap: 12px;
+}
