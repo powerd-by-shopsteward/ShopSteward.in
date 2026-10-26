@@ -720,3 +720,34 @@ ul { list-style: none; }
   font-weight: 800;
   font-size: 12.5px;
 }
+/* ================= PRICING NOTICE ================= */
+.pricing-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(200, 255, 61, 0.04); /* Very subtle green tint */
+  border: 1px solid rgba(200, 255, 61, 0.2);
+  border-left: 3px solid #c8ff3d; /* Acid green highlight bar */
+  padding: 16px 20px;
+  border-radius: 6px;
+  max-width: 750px;
+  margin-top: -10px; /* Pulls it slightly closer to the text above */
+  margin-bottom: 40px; /* Pushes the pricing cards down */
+}
+
+.pricing-note .note-icon {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.pricing-note p {
+  margin: 0;
+  font-size: 13px;
+  color: #a8b1ad; /* Muted text so it doesn't overpower the main copy */
+  line-height: 1.6;
+}
+
+.pricing-note strong {
+  color: #eef4ee; /* Brightens the word "Note:" */
+  font-weight: 600;
+}
