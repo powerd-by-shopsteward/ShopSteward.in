@@ -505,79 +505,114 @@ ul { list-style: none; }
 @media (max-width: 430px) {
   .scanner-steps { grid-template-columns: 1fr; }
 }
-/* ================= COMPARISON TABLE ================= */
+/* ================= STRICT COMPARISON TABLE ================= */
 .comparison-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-.table-scroll-wrapper {
+.table-responsive-wrapper {
   width: 100%;
   overflow-x: auto;
   /* Hide scrollbar for a cleaner look */
   scrollbar-width: none; 
   -ms-overflow-style: none;
+  padding-bottom: 10px;
 }
-.table-scroll-wrapper::-webkit-scrollbar {
+.table-responsive-wrapper::-webkit-scrollbar {
   display: none;
 }
 
+/* Force Table Display */
 .compare-table {
-  width: 100%;
-  min-width: 700px; /* Forces scroll on mobile */
-  border-collapse: collapse;
+  display: table !important;
+  width: 100% !important;
+  min-width: 700px;
+  border-collapse: collapse !important;
   background: #0a0e10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--line);
+  table-layout: fixed; /* Keeps columns even */
+}
+
+.compare-table thead {
+  display: table-header-group !important;
+}
+
+.compare-table tbody {
+  display: table-row-group !important;
+}
+
+.compare-table tr {
+  display: table-row !important;
 }
 
 .compare-table th,
 .compare-table td {
-  padding: 18px 20px;
+  display: table-cell !important;
+  padding: 16px 20px;
   text-align: center;
-  font-size: 13px;
-  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   color: #a8b1ad;
 }
 
-.compare-table th {
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #8f9a95;
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.compare-table th:first-child,
-.compare-table td:first-child {
-  text-align: left;
-  padding-left: 30px;
-}
-
-/* Highlighted Column (ShopSteward) */
-.compare-table .col-highlight {
-  background: rgba(200, 255, 61, 0.04);
-  border-left: 1px solid rgba(200, 255, 61, 0.15);
-  border-right: 1px solid rgba(200, 255, 61, 0.15);
-  color: #eef4ee;
-  font-weight: 600;
-}
-
-.compare-table th.col-highlight {
-  color: #c8ff3d;
-  font-size: 14px;
+.compare-table th:last-child,
+.compare-table td:last-child {
+  border-right: none;
 }
 
 .compare-table tr:last-child td {
   border-bottom: none;
 }
 
+/* Header Styling */
+.compare-table th {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8f9a95;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 18px 20px;
+}
+
+/* First Column (Feature Names) */
+.compare-table .col-feature {
+  text-align: left;
+  width: 38%;
+  font-weight: 500;
+  color: #eef4ee;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.compare-table th.col-feature {
+  color: #8f9a95;
+}
+
+/* Highlighted Column (ShopSteward) */
+.compare-table .col-highlight {
+  background: rgba(200, 255, 61, 0.04) !important;
+  border-left: 1px solid rgba(200, 255, 61, 0.15);
+  border-right: 1px solid rgba(200, 255, 61, 0.15);
+  color: #eef4ee;
+  font-weight: 600;
+  width: 22%;
+}
+
+.compare-table th.col-highlight {
+  color: #c8ff3d;
+  font-size: 13px;
+  background: rgba(200, 255, 61, 0.08) !important;
+}
+
 /* Icons */
 .check {
   color: #c8ff3d;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -587,7 +622,7 @@ ul { list-style: none; }
 }
 
 .manual {
-  font-size: 11px;
+  font-size: 11.5px;
   color: #7f8a85;
   font-style: italic;
 }
@@ -595,9 +630,9 @@ ul { list-style: none; }
 /* Footer Text */
 .table-footer {
   text-align: center;
-  max-width: 650px;
+  max-width: 700px;
   margin: 30px auto 0;
-  font-size: 12px;
+  font-size: 13px;
   color: #7f8a85;
   line-height: 1.6;
 }
@@ -605,10 +640,10 @@ ul { list-style: none; }
 @media(max-width: 900px) {
   .compare-table th, 
   .compare-table td {
-    padding: 14px 15px;
+    padding: 12px 15px;
+    font-size: 12px;
   }
-  .compare-table th:first-child,
-  .compare-table td:first-child {
-    padding-left: 20px;
+  .compare-table .col-feature {
+    width: 45%;
   }
 }
