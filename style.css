@@ -795,3 +795,97 @@ ul { list-style: none; }
     .spotlight-card { transition: none !important; }
     .spotlight-card:hover { transform: none !important; }
 }
+/* ================= SHOWCASE / HANDOVER ================= */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.showcase-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.showcase-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card:hover .showcase-media img { transform: scale(1.06); }
+
+.showcase-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(200, 255, 61, 0.15);
+    border: 1px solid rgba(200, 255, 61, 0.4);
+    color: var(--acid);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 5px 10px;
+    border-radius: 50px;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.showcase-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.showcase-body h3 { font-size: 1.15rem; font-weight: 600; }
+.showcase-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
+
+.showcase-ig {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--acid);
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 14px;
+    transition: color 0.3s, gap 0.3s;
+}
+.showcase-ig:hover { color: #fff; gap: 12px; }
+
+@media (max-width: 900px) {
+    .showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+@media (max-width: 600px) {
+    .showcase-grid { grid-template-columns: 1fr; gap: 14px; }
+    .showcase-body { padding: 18px; }
+}
+
+/* ================= TESTIMONIAL GRID ================= */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.testimonial-grid .testimonial-card { padding: 40px 32px; }
+.testimonial-grid .testi-quote { font-size: 1.05rem; line-height: 1.7; margin: 0 0 20px; }
+
+@media (max-width: 900px) {
+    .testimonial-grid { grid-template-columns: 1fr; gap: 15px; }
+    .testimonial-grid .testimonial-card { padding: 28px 20px; }
+}
