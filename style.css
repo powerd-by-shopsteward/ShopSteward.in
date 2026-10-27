@@ -13,12 +13,17 @@
     --glass-bg: rgba(0, 0, 0, 0.2);
     --glass-border: rgba(123, 178, 142, 0.25);
     
-    --font-sans: 'Manrope', sans-serif;
+        --font-sans: 'Manrope', sans-serif;
     --font-serif: 'Fraunces', serif;
+
+    /* Referenced in the AI Scanner section but never defined */
+    --ink: #eef4ee;
+    --line: rgba(255, 255, 255, 0.10);
+    --acid: #c8ff3d;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
 body { 
     background-color: var(--bg-dark); 
@@ -221,6 +226,7 @@ ul { list-style: none; }
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
 .price-card { padding: 40px 30px; display: flex; flex-direction: column; position: relative; }
 .price-card.popular { border-color: var(--green); background: rgba(123, 178, 142, 0.1); transform: scale(1.02); z-index: 2; }
+.price-card.popular:hover { transform: translateY(-8px) scale(1.02) !important; }
 .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: black; font-size: 0.7rem; font-weight: 800; padding: 6px 16px; border-radius: 20px; letter-spacing: 0.1em; white-space: nowrap; }
 .price-tier { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 10px; letter-spacing: 0.1em; }
 .price-card h3 { font-size: 1.4rem; margin-bottom: 20px; font-weight: 500; }
@@ -751,28 +757,6 @@ ul { list-style: none; }
   color: #eef4ee; /* Brightens the word "Note:" */
   font-weight: 600;
 }
-/* ================= ULTIMATE FIX FOR THE PILL ================= */
-.steward-block {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* ================= ULTIMATE FIX FOR THE PILL ================= */
-.steward-block {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* ================= ULTIMATE FIX FOR THE PILL ================= */
-.steward-block {
-    display: flex !important;
-    flex-direction: column !important;
-}
-/* ================= ULTIMATE FIX FOR THE PILL ================= */
-.steward-block {
-    display: flex !important;
-    flex-direction: column !important;
-}
 
 /* ================= ULTIMATE FIX FOR THE PILL ================= */
 .steward-block {
@@ -785,4 +769,29 @@ ul { list-style: none; }
     width: max-content !important;
     align-self: flex-start !important;
     margin-bottom: 24px !important; /* Gives space between pill and text */
+}
+/* ================= CTA + FOOTER LINK ================= */
+.scanner-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.footer-link {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s;
+}
+.footer-link:hover { color: white; }
+/* ================= ACCESSIBILITY ================= */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .spotlight-card { transition: none !important; }
+    .spotlight-card:hover { transform: none !important; }
 }
