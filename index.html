@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopSteward — The Trusted Software That Runs Your Shop</title>
+
+        <meta name="description" content="Custom-built inventory, billing and reports for Indian shops. Runs in your browser, in your language. Base setup ₹2,999.">
+    <meta property="og:title" content="ShopSteward — The Trusted Software That Runs Your Shop">
+    <meta property="og:description" content="Custom-built inventory, billing and reports for Indian shops. ₹2,999 setup + ₹599/year.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shopsteward.in/">
+    <meta name="theme-color" content="#121c17">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +25,7 @@
         <a href="#top" class="logo-area">
             <!-- YOUR LOGO WITH AUTOMATIC FALLBACK AND CACHE BUSTER -->
             <img src="images/logo.png?v=2" alt="ShopSteward Logo" class="logo-img" 
-                 onerror="alert('ERROR: logo.png not found! Please make sure the file is named exactly logo.png and is in the same folder as index.html'); this.style.display='none'; document.getElementById('fallbackLogo').style.display='block';">
-                 
+                                  onerror="this.style.display='none'; document.getElementById('fallbackLogo').style.display='block';">
             <svg id="fallbackLogo" style="display:none; height:32px; width:auto; fill:var(--green);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
                 <path d="M32 8C20 8 12 17 12 28C12 35 16 41 22 44V56C22 57.5 23 58 24 58C25 58 26 57.5 26 56V48H32C33.5 48 34 47 34 46C34 45 33.5 44 32 44H26V40H32C33.5 40 34 39 34 38C34 37 33.5 36 32 36H26V44C26 46 24 46 22 46C20 46 18 44 18 42C18 36 26 32 32 32C43 32 52 23 52 12C52 10 51 8 50 8H32Z"/>
             </svg>
@@ -30,8 +36,8 @@
         <nav class="nav-links" id="navLinks">
             <a href="#demo">Live Demo</a>
             <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
             <a href="#why-not-carry-on">Why Us?</a>
-            <a href="#pricing">Pricing</a>
             <a href="#products">Products</a>
             <a href="#invoice-scanner">AI Scanner</a>
             <a href="#faq">FAQ</a>
@@ -44,7 +50,7 @@
                 <span class="star">✦</span> Start free trial
             </a>
         </div>
-        <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+                <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false" onclick="const n=document.getElementById('navLinks'); n.classList.toggle('show'); this.setAttribute('aria-expanded', n.classList.contains('show'));">☰</button>
     </header>
 
     <main id="top">
@@ -53,7 +59,7 @@
             <div class="hero-bg">
                 <!-- YOUR HERO IMAGE WITH AUTOMATIC FALLBACK AND CACHE BUSTER -->
                 <img src="images/shop-owner.png?v=2" alt="Shop Owner" 
-                     onerror="alert('ERROR: shop-owner.png not found! Please make sure the file is named exactly shop-owner.png and is in the same folder as index.html'); this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop'">
+                                          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop'">
                 <div class="hero-overlay"></div>
             </div>
 
@@ -234,7 +240,7 @@
         <!-- TESTIMONIAL -->
         <section class="section">
             <div class="glass testimonial-card spotlight-card reveal">
-                <div class="section-no">30+ HAPPY OWNERS</div>
+                                <div class="section-no">49 HAPPY OWNERS</div>
                 <p class="testi-quote">Pehle stock count karke register karne mein pura din nikal jaata tha. Ab ShopSteward ke saath stock har waqt mere table pe rehta hai — kaunsa product low hai, kya order karna hai, profit mein hoon ya ghate mein — sab kuch pata chalta hai. Mujhe motivation milti hai.</p>
                 <div class="testi-author"><b>Gourgopal Das</b><span>Krishi Bandhu</span></div>
             </div>
@@ -299,7 +305,7 @@
                         <li>Full Inventory & Reports</li>
                         <li>WhatsApp Support</li>
                     </ul>
-                    <a class="btn-primary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20CUSTOM%20ShopSteward%20plan%20at%20%E2%82%B93%2C999" target="_blank">GET CUSTOM →</a>
+                    <a class="btn-primary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20CUSTOM%20ShopSteward%20plan%20at%20%E2%82%B95%2C999" target="_blank">GET CUSTOM →</a>
                 </article>
 
                 <article class="glass price-card spotlight-card reveal">
@@ -321,7 +327,7 @@
                         <li>Advanced Dashboards</li>
                         <li>Priority 24/7 Support</li>
                     </ul>
-                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20AI%20ADVANCED%20ShopSteward%20plan%20at%20%E2%82%B99%2C999" target="_blank">TALK TO ARCHITECT →</a>
+                    <a class="btn-secondary full-width" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20the%20AI%20ADVANCED%20ShopSteward%20plan%20at%20%E2%82%B919%2C999" target="_blank">TALK TO ARCHITECT →</a>
                 </article>
             </div>
         </section>
@@ -330,7 +336,7 @@
        <!-- ================= COMPARISON TABLE ================= -->
 <section class="section reveal" id="why-not-carry-on">
   <div class="comparison-header">
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);color:#eef4ee;margin:0 0 16px;letter-spacing:-.04em;">Why Choose Us?</h2>
+    <h2 style="font-family:var(--font-serif);font-size:clamp(36px,5vw,56px);color:var(--ink);margin:0 0 16px;letter-spacing:-.04em;">Why Choose Us?</h2>
     <p class="copy" style="max-width:600px;margin:0 auto;text-align:center;font-size:16px;color:#a8b1ad;">Your accounting software was never built to read a bill. A register was never built to tell you your margin.</p>
   </div>
 
@@ -418,7 +424,7 @@
             
             <h3 class="sub-heading reveal">🌐 Domains</h3>
             <div class="domain-grid">
-                <div class="glass domain-card spotlight-card reveal" onclick="openDomainModal('.in Domain', '₹1,299 setup + ₹999/year')">
+                <div class="glass domain-card spotlight-card reveal" role="button" tabindex="0" aria-label="View .in Domain details" onclick="openDomainModal('.in Domain', '₹1,299 setup + ₹999/year')">
                     <h4>.in Domain</h4>
                     <p>yourshop.in</p>
                     <div class="domain-price">₹1,299 <span>+ ₹999/yr</span></div>
@@ -512,7 +518,7 @@
   <div class="scanner-grid">
     <!-- Left: Features List -->
     <div class="scanner-features">
-      <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:#eef4ee;margin:0 0 20px 0;">What it extracts:</h3>
+      <h3 style="font-family:var(--font-serif);font-size:22px;color:var(--ink);margin:0 0 20px 0;">What it extracts:</h3>
       <ul class="scanner-list">
         <li><strong>Supplier Details:</strong> Company name, address, GSTIN.</li>
         <li><strong>Invoice Info:</strong> Invoice number, date, and totals.</li>
@@ -545,6 +551,7 @@
 
       <a class="btn primary" style="width:100%;justify-content:center;padding:16px;" href="https://wa.me/918637560557?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20AI%20Invoice%20Scanner%20(%E2%82%B97%2C999%2Fyear)." target="_blank" rel="noopener">GET A QUOTE →</a>
     </div>
+      </div>
 
   <!-- Eligibility Note (Highly Visible) -->
   <div class="eligibility-note">
@@ -598,16 +605,16 @@
     <footer class="footer">
         <div>© 2026 ShopSteward</div>
         <div class="footer-links">
-            <a href="#terms" onclick="openModal('terms')">Terms</a>
-            <a href="#privacy" onclick="openModal('privacy')">Privacy</a>
-            <a href="#refund" onclick="openModal('refund')">Refund</a>
+                        <button class="footer-link" onclick="openModal('terms')">Terms</button>
+            <button class="footer-link" onclick="openModal('privacy')">Privacy</button>
+            <button class="footer-link" onclick="openModal('refund')">Refund</button>
             <a href="https://instagram.com/shopsteward.in" target="_blank">Instagram</a>
         </div>
     </footer>
 
     <!-- DOMAIN MODAL -->
     <div class="modal-overlay" id="domainModal">
-        <div class="glass modal-content">
+                <div class="glass modal-content" role="dialog" aria-modal="true">
             <button class="close-btn" onclick="closeModal('domainModal')">×</button>
             <h2 id="modalDomainTitle">Domain Details</h2>
             <p class="modal-desc">You are about to request setup for <strong id="modalDomainName"></strong>.</p>
@@ -622,7 +629,7 @@
 
     <!-- LEGAL MODALS -->
     <div class="modal-overlay" id="termsModal">
-        <div class="glass modal-content legal-content">
+                <div class="glass modal-content legal-content" role="dialog" aria-modal="true">
             <button class="close-btn" onclick="closeModal('termsModal')">×</button>
             <h2>Terms & Conditions</h2>
             <p>ShopSteward provides custom software development and related services for shops and businesses. Information on this website explains the services, demo and pricing. Specific client work is governed by the agreed scope.</p>
@@ -632,7 +639,7 @@
     </div>
 
     <div class="modal-overlay" id="privacyModal">
-        <div class="glass modal-content legal-content">
+                <div class="glass modal-content legal-content" role="dialog" aria-modal="true">
             <button class="close-btn" onclick="closeModal('privacyModal')">×</button>
             <h2>Privacy Policy</h2>
             <p>We collect information you submit through contact forms, such as your name, shop name, phone number, business type and message. We use it to respond to enquiries and provide requested services.</p>
@@ -642,7 +649,7 @@
     </div>
 
     <div class="modal-overlay" id="refundModal">
-        <div class="glass modal-content legal-content">
+                <div class="glass modal-content legal-content" role="dialog" aria-modal="true">
             <button class="close-btn" onclick="closeModal('refundModal')">×</button>
             <h2>Refund Policy</h2>
             <p>Development begins after the agreed scope and payment terms are confirmed. Annual service terms and renewal pricing are shown on the pricing section. Additional work outside the agreed scope is quoted separately.</p>
