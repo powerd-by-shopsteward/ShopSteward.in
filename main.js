@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             parent.classList.toggle('open');
         });
     });
-        // 1b. Close mobile menu when a nav link is tapped
+    
+    // 1b. Close mobile menu when a nav link is tapped
     document.querySelectorAll('#navLinks a').forEach(link => {
         link.addEventListener('click', () => {
             document.getElementById('navLinks').classList.remove('show');
@@ -16,15 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-
-        // 2. Scroll Reveal Animations
-    
+    // 2. Scroll Reveal Animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // We removed the setTimeout that was breaking the hover effect!
                 revealObserver.unobserve(entry.target); 
             }
         });
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-        // 3. Hero Glass Card WhatsApp Integration
+    // 3. Hero Glass Card WhatsApp Integration
     const submitBtn = document.getElementById('whatsappBtn');
     const textArea = document.getElementById('aiPrompt');
 
@@ -71,36 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Number Spinner Animation
-    const spinTargets = document.querySelectorAll('.spin-target');
-    const spinObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.dataset.target);
-                let current = 0;
-                const duration = 1500;
-                const stepTime = 30;
-                const steps = duration / stepTime;
-                const increment = target / steps;
-
-                               const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        el.textContent = target.toLocaleString('en-IN');
-                        clearInterval(timer);
-                    } else {
-                        el.textContent = Math.floor(current).toLocaleString('en-IN');
-                    }
-                }, stepTime);
-                
-                spinObserver.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-    spinTargets.forEach(el => spinObserver.observe(el));
-
-        // 4b. Domain cards: Enter/Space support
+    // 4. Domain cards: Enter/Space support
     document.querySelectorAll('.domain-card').forEach(card => {
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -110,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    
     // 5. Copy credentials helper
     window.copyText = async function(id, btn) {
         const text = document.getElementById(id).textContent;
@@ -165,6 +133,7 @@ window.addEventListener('click', (e) => {
         document.body.style.overflow = '';
     }
 });
+
 // ESC closes any open modal
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
