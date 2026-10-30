@@ -28,9 +28,9 @@ html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body { 
     background-color: var(--bg-dark); 
     background-image: 
-        radial-gradient(ellipse at 10% 10%, rgba(123, 178, 142, 0.28) 0%, transparent 50%),
-        radial-gradient(ellipse at 90% 90%, rgba(60, 145, 110, 0.22) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(80, 140, 100, 0.12) 0%, transparent 60%);
+        radial-gradient(circle at 15% 20%, rgba(123, 178, 142, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(200, 255, 61, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(18, 28, 23, 1) 0%, rgba(10, 15, 12, 1) 100%);
     background-attachment: fixed;
     color: var(--text-light); 
     font-family: var(--font-sans); 
@@ -52,13 +52,13 @@ ul { list-style: none; }
 
 /* --- 2. THE GLASSMORPHISM --- */
 .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.04); /* Light frosted glass instead of dark */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Brighter border */
     box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.5), 
-        inset 0 0 15px rgba(123, 178, 142, 0.05);
+        0 8px 32px 0 rgba(0, 0, 0, 0.3), 
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05); /* Subtle inner glow */
     border-radius: 24px;
 }
 
@@ -70,21 +70,12 @@ ul { list-style: none; }
 }
 
 .spotlight-card:hover {
-    /* 1. A gentle 8px lift, forced with !important to override JS */
     transform: translateY(-8px) !important;
-    
-    /* 2. Brighter border */
-    border-color: rgba(123, 178, 142, 0.8);
-    
-    /* 3. Slightly darker glass so the text stays readable */
-    background: rgba(18, 24, 20, 0.95) !important;
-    
-    /* 4. Soft drop shadow and a subtle green glow */
+    border-color: rgba(200, 255, 61, 0.4); /* Acid green border on hover */
+    background: rgba(255, 255, 255, 0.08) !important; /* Gets brighter on hover */
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.7), 
-        0 0 30px rgba(123, 178, 142, 0.25), 
-        inset 0 0 15px rgba(123, 178, 142, 0.1);
-        
+        0 20px 40px rgba(0, 0, 0, 0.5), 
+        0 0 30px rgba(200, 255, 61, 0.15); /* Soft acid green glow */
     z-index: 10;
 }
 
@@ -244,7 +235,15 @@ ul { list-style: none; }
     margin-bottom: 8px;
     border: 1px solid rgba(255, 77, 77, 0.3);
 }
-.price-card .amt { font-size: 3rem; font-weight: 700; line-height: 1; margin-bottom: 10px; letter-spacing: -0.03em; }
+.price-card .amt { 
+    font-size: 3.5rem; 
+    font-weight: 800; 
+    line-height: 1; 
+    margin-bottom: 10px; 
+    letter-spacing: -0.03em; 
+    color: var(--acid); /* Makes the numbers bright acid green */
+    text-shadow: 0 0 20px rgba(200, 255, 61, 0.2); /* Adds a subtle glow */
+}
 .price-card .sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 25px; }
 .price-card .sub b { color: var(--green); }
 .price-meta { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 0.85rem; }
